@@ -14,8 +14,16 @@ if (process.argv.length == 3) {
     port = process.argv[2];
 } 
 
-// middleware to enable CORS for all routes
-app.use(cors());
+// my site url I only want having access
+const allowedSite = 'https://jaedenhob.github.io/Portfolio-deploy/';
+
+// Configure CORS
+const corsOptions = {
+    origin: allowedSite,
+};
+
+// middleware to enable CORS 
+app.use(cors(corsOptions));
 
 // middleware to parse JSON
 app.use(express.json());
@@ -43,8 +51,6 @@ const contactSchema = new mongoose.Schema({
 });
 
 const Contact = mongoose.model('Contact', contactSchema);
-
-const allowedSite = 'https://jaedenhob.github.io/Portfolio-deploy/';
 
 app.get('/test', (req, res) => {
     res.json({ message: 'Good we are aple to reach the server' });
