@@ -15,7 +15,7 @@ if (process.argv.length == 3) {
 } 
 
 // my site url I only want having access
-const allowedSite = 'https://jaedenhob.github.io/Portfolio-deploy/contact';
+const allowedSite = 'https://jaedenhob.github.io';
 
 // Configure CORS
 const corsOptions = {
