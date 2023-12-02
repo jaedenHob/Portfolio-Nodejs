@@ -1,0 +1,5 @@
+# to hide database URI from git repo
+.env
+
+# to avoid slow push and pulls
+node_modules
